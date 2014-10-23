@@ -1,12 +1,24 @@
-class Student
+class Person
+	attr_accessor :name
+    def initialize(name)
+    	@name = name
+    end
 
-  def learn
+    def greeting
+    	"Hello, My name is #{@name}"
+    end
+
+end
+
+class Student < Person
+
+  def learn 
   	puts "I get it!"
   end
 
 end
 
-class Instructor
+class Instructor < Person
   
   def teach
   	puts "Everything is ruby is an object"
@@ -14,3 +26,6 @@ class Instructor
 
 end
 
+
+instructor1 = Instructor.new("Chris")
+puts instructor1.greeting
